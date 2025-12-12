@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cpjishs5r44nc"]
+
+[ext_resource type="Script" uid="uid://cuqljl4acoahd" path="res://characters/player/weapon.gd" id="1_6dv0v"]
+[ext_resource type="PackedScene" uid="uid://c21hrdhdtaw5e" path="res://objects/projectile.tscn" id="2_ronfr"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ixbpm"]
+width = 96
+height = 32
+
+[node name="Weapon" type="Node2D" unique_id=1627013410]
+script = ExtResource("1_6dv0v")
+projectile_scene = ExtResource("2_ronfr")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=849286622]
+position = Vector2(48, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Marker2D" unique_id=344492866]
+modulate = Color(0.24705882, 1, 0.7607843, 1)
+texture = SubResource("NoiseTexture2D_ixbpm")
+
+[node name="SpawnPosition" type="Marker2D" parent="." unique_id=259705438]
+position = Vector2(90, 0)

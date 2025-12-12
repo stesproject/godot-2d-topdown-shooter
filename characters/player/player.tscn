@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b6w8w6k1fa5hg"]
+
+[ext_resource type="PackedScene" uid="uid://dxr5jhi8t7cd8" path="res://characters/character.tscn" id="1_508ok"]
+[ext_resource type="Script" uid="uid://dc7tm2gjlghaj" path="res://characters/player/player_event_bus.gd" id="2_xxgcw"]
+[ext_resource type="Script" uid="uid://0q1jvnep0sdg" path="res://controllers/input_controller.gd" id="3_exd8k"]
+[ext_resource type="PackedScene" uid="uid://cpjishs5r44nc" path="res://objects/weapon.tscn" id="4_5dc8e"]
+
+[node name="Player" unique_id=1022780336 instance=ExtResource("1_508ok")]
+
+[node name="InputController" type="Node2D" parent="." index="0" unique_id=1183249883]
+script = ExtResource("3_exd8k")
+metadata/_custom_type_script = "uid://0q1jvnep0sdg"
+
+[node name="PlayerEventBus" type="Node2D" parent="." index="3" unique_id=128452804]
+script = ExtResource("2_xxgcw")
+metadata/_custom_type_script = "uid://dc7tm2gjlghaj"
+
+[node name="Weapon" parent="." index="4" unique_id=1627013410 instance=ExtResource("4_5dc8e")]
+position = Vector2(0, -32)
+projectile_parent = NodePath("../..")

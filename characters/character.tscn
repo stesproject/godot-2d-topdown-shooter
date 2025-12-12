@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dxr5jhi8t7cd8"]
+
+[ext_resource type="Script" uid="uid://b1tftlxptbdkx" path="res://characters/character.gd" id="1_54qew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ers5l"]
+size = Vector2(64, 64)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c3pkw"]
+width = 64
+height = 128
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=635169122]
+script = ExtResource("1_54qew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185766245]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_ers5l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1293979675]
+modulate = Color(0.4745098, 1, 1, 1)
+position = Vector2(0, -64)
+texture = SubResource("NoiseTexture2D_c3pkw")

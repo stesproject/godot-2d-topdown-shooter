@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://x2cbdi1a0h7i"]
+
+[ext_resource type="PackedScene" uid="uid://b6w8w6k1fa5hg" path="res://characters/player/player.tscn" id="1_urvl1"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_c3pkw"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_d6q2c"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_d6q2c"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_p5exx"]
+
+[sub_resource type="Resource" id="Resource_p5exx"]
+script = ExtResource("3_d6q2c")
+
+[node name="Map" type="Node2D" unique_id=711801420]
+
+[node name="Player" parent="." unique_id=1022780336 instance=ExtResource("1_urvl1")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=240571564]
+physics_interpolation_mode = 1
+process_callback = 0
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=2081964331]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_d6q2c")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=1505070943 node_paths=PackedStringArray("follow_target")]
+top_level = true
+script = ExtResource("2_c3pkw")
+follow_mode = 2
+follow_target = NodePath("../Player")
+tween_resource = SubResource("Resource_p5exx")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="obst1" type="Sprite2D" parent="." unique_id=1562693379]
+position = Vector2(-231, 68)
+texture = ExtResource("5_p5exx")
+
+[node name="obst2" type="Sprite2D" parent="." unique_id=941149280]
+position = Vector2(357, -180)
+texture = ExtResource("5_p5exx")
+
+[node name="obst3" type="Sprite2D" parent="." unique_id=1484223816]
+position = Vector2(-157, -368)
+texture = ExtResource("5_p5exx")
