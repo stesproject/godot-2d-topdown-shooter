@@ -8,11 +8,11 @@ const INP_MOVE_RIGHT = "ui_right"
 const INP_MOVE_UP = "ui_up"
 const INP_MOVE_DOWN = "ui_down"
 
-# Aim actions (can be mapped to right analog stick or mouse)
-const INP_AIM_LEFT = "ui_left"
-const INP_AIM_RIGHT = "ui_right"
-const INP_AIM_UP = "ui_up"
-const INP_AIM_DOWN = "ui_down"
+# Aim actions
+const INP_AIM_LEFT = "aim_left"
+const INP_AIM_RIGHT = "aim_right"
+const INP_AIM_UP = "aim_up"
+const INP_AIM_DOWN = "aim_down"
 
 # Action buttons
 const INP_ACTION_PRIMARY = "ui_accept"
